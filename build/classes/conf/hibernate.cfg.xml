@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+
+	<!--factoria de hibernate-->
+    <session-factory>
+        
+       <!-- Database SqlServer Nativo--> 
+       <property name="connection.driver_class">com.microsoft.sqlserver.jdbc.SQLServerDriver</property>
+       <property name="connection.url">jdbc:sqlserver://localhost:1433;databaseName=base4</property>
+       <property name="connection.username">user1</property>
+       <property name="connection.password">user1</property>
+	
+       <!-- JDBC conexion pool (built-in), conexiones simultaneas-->
+       <property name="connection.pool_size">1</property>
+       
+       <!-- Sql Server dialecto, que bd utilizar, que driver estamos utilizando, que lenguaje-->
+       <property name="dialect">org.hibernate.dialect.SQLServerDialect</property>	
+
+       <!-- Imprime todo el sql -->
+       <property name="show_sql">true</property>
+
+       <!-- Crea las tablas, la destruye y la vuelve a crear la tabla -->
+  	   <!--<property name="hbm2ddl.auto">create</property>-->
+  	   <property name="hbm2ddl.auto">update</property>
+	    
+       <mapping resource="/conf/Usuario.hbm.xml"/>
+
+    </session-factory>
+
+</hibernate-configuration>

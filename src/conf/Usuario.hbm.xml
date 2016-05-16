@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+    <class name="modelo.Usuario" table="usuarios">
+    
+    	<!--dos columnas de primary keys-->
+		<composite-id>
+			<key-property name="username" column="username" type="string" length="30" />
+			<key-property name="codigoPc" column="codigoPc" type="string" length="30" />
+		</composite-id>
+    	
+    	<!--campo clave username tipo int
+        <id name="username" column="username" type="string" length="30" >
+       		 
+       		 los valores se asigna manualmente
+       		 <generator class="assigned" />    
+        </id>-->
+        
+        <!--los demas campos-->
+        <property name="password" type="string" length="30" />
+        <property name="nombre" type="string" length="30" />
+        <property name="email" type="string" length="30" unique="true"/>
+        <property name="dni" type="string" length="30" unique="true" />
+        <property name="apellido" type="string" length="30" />
+        <property name="micro" type="string" length="30" />
+        <property name="pantalla" type="string" length="30" />
+     	   
+   </class>
+   
+</hibernate-mapping>
