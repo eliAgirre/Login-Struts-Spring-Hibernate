@@ -43,7 +43,7 @@ public class Signin extends ActionSupport{
 		
 		int iContador=0;
 		usuarioBusq=operar.buscaMaxPc();
-		if(usuario!=null){
+		if(usuarioBusq!=null){
 			tmpSession.put("contador", usuarioBusq.getCodigoPc());
 			iContador=Integer.parseInt(tmpSession.get("contador"));
 		}

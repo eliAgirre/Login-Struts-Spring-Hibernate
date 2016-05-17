@@ -13,12 +13,11 @@
 			<result name="SUCCESS">/index.jsp</result>
 		</action>
 		
-		
-		<!--<action name="accionSignin" class="controlador.Signin">
+		<action name="accionSignin" class="controlador.Signin">
 			<result name="SUCCESS_BIEN">/sigin_bien.jsp</result>
 			<result name="SUCCESS_MAL">/resultado_mal.jsp</result>
 			<result name="input">/index.jsp</result>
-		</action>-->
+		</action>
 		
 		<action name="accionLogin" class="controlador.Login">
 			<result name="SUCCESS_BIEN">/login_bien.jsp</result>

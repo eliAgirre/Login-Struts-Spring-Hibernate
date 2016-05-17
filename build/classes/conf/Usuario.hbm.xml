@@ -6,17 +6,17 @@
     <class name="modelo.Usuario" table="usuarios">
     
     	<!--dos columnas de primary keys-->
-		<composite-id>
-			<key-property name="username" column="username" type="string" length="30" />
-			<key-property name="codigoPc" column="codigoPc" type="string" length="30" />
-		</composite-id>
-    	
-    	<!--campo clave username tipo int
-        <id name="username" column="username" type="string" length="30" >
-       		 
-       		 los valores se asigna manualmente
-       		 <generator class="assigned" />    
-        </id>-->
+        <composite-id>  
+      
+            <key-property name="username" type="java.lang.String">  
+                <column name="username" length="30" not-null="true" />  
+            </key-property>  
+            
+            <key-property name="codigoPc" type="java.lang.String">  
+                 <column name="codigoPc" length="30" not-null="true" />  
+            </key-property>
+              
+        </composite-id>
         
         <!--los demas campos-->
         <property name="password" type="string" length="30" />

@@ -25,7 +25,7 @@
 	
 	</s:form>
 	
-	<!--<s:form action="accionSignin">
+	<s:form action="accionSignin">
 		
 		<s:textfield name="username" key="login.user" />
 		<s:password name="password" key="login.password" />
@@ -35,7 +35,7 @@
 		<s:submit key="signin.boton.submit" />
 		<s:reset key="signin.boton.reset" cssStyle="background-color:white;"/>
 	
-	</s:form>-->
+	</s:form>
 	
 	<%--Salida de errores--%>
 	<s:fielderror>

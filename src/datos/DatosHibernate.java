@@ -40,18 +40,9 @@ public class DatosHibernate {
 		
 		try{
 			
-			//session.save(usuario);
-			Query query = session.createQuery("insert into Usuario (username,codigoPc,password,nombre,email,dni,apellido,micro,pantalla) select u.username, u.codigoPc, u.password, u.nombre, u.email, u.dni, u.apellido, u.micro, u.pantalla from Usuario u");
-			int result=query.executeUpdate();
-
-			if(result>0){
-				ts.commit(); 
-		        resultado=true;
-			}
-			else{
-				resultado=false;
-			}
-						
+			session.save(usuario);
+			ts.commit(); 
+			resultado=true;			
 		}
 		catch(HibernateException he) {
 			ts.rollback();
@@ -64,49 +55,6 @@ public class DatosHibernate {
 		return resultado;
 		
 	}
-
-	/*public boolean grabarUno(Usuario usuario){
-		
-		abrirSessionFactory();
-		
-		boolean resultado = false;
-		
-		Session session=sessionFactory.openSession();
-		Transaction ts=session.beginTransaction();
-		
-		try{
-			
-			session.save(usuario); 
-			ts.commit();
-			resultado=true;
-						
-		}
-		catch(HibernateException he) {
-			ts.rollback();
-			resultado=false;
-		}
-		finally{
-			session.close();			
-		}
-		
-		return resultado;
-		
-	} */// grabarUno
-	
-	/*public Usuario buscaUnoClave(String clave) {
-		
-		abrirSessionFactory();
-
-		Session session=sessionFactory.openSession();
-		
-		// Si no lo encuentra devuelve null
-		Usuario usuario=(Usuario) session.get(Usuario.class, clave); 
- 
-		cerrarSessionFactory();
-		
-		return usuario;       
-	
-	}*/ // buscarUnoClave
 	
 	public Usuario buscaUnoClave(String clave) {
 	
@@ -131,31 +79,6 @@ public class DatosHibernate {
 		return usuario;       
 
 	} // buscarUnoClave
-	
-	/*public boolean actualizaUno(Usuario usuario) {
-		
-		abrirSessionFactory();
-		
-		Session session=sessionFactory.openSession();
-		Transaction ts = session.beginTransaction();
-		boolean resultado=false;
-		
-		try{
-	    	session.update(usuario);
-	        ts.commit(); 
-	        resultado=true;
-	    }
-	    catch (HibernateException he){ 
-	    	ts.rollback();
-	    	resultado=false;
-	    }
-	    finally { 
-	        session.close(); 
-	    }
-		
-		return resultado;
-		
-	}*/ // actualizaUno
 	
 	public boolean actualizaUno(Usuario usuario) {
 		
